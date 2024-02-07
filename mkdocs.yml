@@ -23,8 +23,8 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - footnotes
   - admonition
   - pymdownx.details
@@ -64,7 +64,7 @@ plugins:
             - /README.md
             - /doc/*
         - name: multicluster-gateway-controller
-          import_url: 'https://github.com/kuadrant/multicluster-gateway-controller?edit_uri=/blob/main/&branch=release-0.3'
+          import_url: 'https://github.com/jasonmadigan/multicluster-gateway-controller?edit_uri=/blob/main/&branch=docs-videos'
           imports:
             - /README.md
             - /docs/*
