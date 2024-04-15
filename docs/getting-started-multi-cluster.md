@@ -8,7 +8,9 @@
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 - OpenSSL >= 3
 - AWS account with Route 53 enabled or GCP with Cloud DNS enabled
-- [Docker Mac Net Connect](https://github.com/chipmk/docker-mac-net-connect) (macOS users only)
+- macOS: Optional tools to aid with L3 connectivity (connect to containers on a macOS host without forwarding):
+- - [Docker Mac Net Connect](https://github.com/chipmk/docker-mac-net-connect)
+- - [Podman Mac Net Connect](https://github.com/jasonmadigan/podman-mac-net-connect)
 
 ### DNS Environmental Variables
 
