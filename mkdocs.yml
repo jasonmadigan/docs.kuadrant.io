@@ -158,6 +158,9 @@ plugins:
           import_url: https://github.com/kuadrant/dns-operator?edit_uri=/blob/main/&branch=main
           imports:
           - /docs/provider.md
+          - /docs/migrating_existing_clusters_to_use_groups.md
+          - /docs/exercising_DNS_failover_via_groups.md
+          - /docs/migrating_away_from_DNS_groups.md
         - name: developer-portal-controller
           import_url: https://github.com/kuadrant/developer-portal-controller?edit_uri=/blob/main/&branch=main
           imports:
@@ -256,6 +259,10 @@ nav:
           - 'Health Checks': kuadrant-operator/doc/user-guides/dns/dnshealthchecks.md
           - 'CoreDNS Support': kuadrant-operator/doc/user-guides/dns/core-dns.md
           - 'Cluster Aware DNSRecord Delegation': kuadrant-operator/doc/user-guides/dns/understanding_dns_delegation.md
+          - 'DNS Fail-over':
+            - 'Migrating Existing Clusters To Use Groups': dns-operator/docs/migrating_existing_clusters_to_use_groups.md
+            - 'Exercising DNS Fail-over via Groups': dns-operator/docs/exercising_DNS_failover_via_groups.md
+            - 'Migrating Away From DNS Groups': dns-operator/docs/migrating_away_from_DNS_groups.md
       - 'mTLS Configuration': kuadrant-operator/doc/install/mtls-configuration.md
       - 'Observability':
           - 'Configure Observability': kuadrant-operator/doc/user-guides/observability/monitors.md
