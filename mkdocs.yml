@@ -51,6 +51,7 @@ plugins:
   - asciidoctor_backend:
       fail_on_error: true
   - search
+  - gh-admonitions
   # Note: Try to avoid globs for `imports`. Be explicit about imports, so we can avoid having
   # published dangling docs with no routes to them from the nav/other pages - these will go stale quickly.
   - multirepo:
