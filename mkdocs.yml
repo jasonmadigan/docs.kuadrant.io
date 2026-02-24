@@ -64,7 +64,11 @@ plugins:
           - /doc/install/mtls-configuration.md
           - /doc/observability/examples.md
           - /doc/observability/metrics.md
+          - /doc/observability/envoy-access-logs.md
+          - /doc/observability/jaeger_ui_trace.png
+          - /doc/observability/jaeger_ui_tracing_logs.png
           - /doc/observability/tracing.md
+          - /examples/otel/README.md
           - /doc/overviews/auth.md
           - /doc/overviews/dns.md
           - /doc/overviews/rate-limiting.md
