@@ -105,6 +105,10 @@ plugins:
           - /doc/cel/standard.md
           - /doc/cel/extensions/optional.md
           - /doc/cel/extensions/strings.md
+          - /examples/otel/README.md
+          - /doc/observability/jaeger_ui_trace.png
+          - /doc/observability/jaeger_ui_tracing_logs.png
+          - /doc/observability/envoy-access-logs.md
           - /doc/images/*
         - name: authorino
           import_url: https://github.com/kuadrant/authorino?edit_uri=/blob/main/&branch=main
@@ -157,10 +161,20 @@ plugins:
         - name: dns-operator
           import_url: https://github.com/kuadrant/dns-operator?edit_uri=/blob/main/&branch=main
           imports:
-          - /docs/provider.md
+          - /config/coredns/kustomization.yaml
+          - /coredns/plugin/README.md
+          - /docs/cli.md
+          - /docs/coredns/configuration.md
+          - /docs/coredns/coredns-integration.md
+          - /docs/coredns/local-development.md
+          - /docs/coredns/README.md
+          - /docs/coredns/zone-delegation.md
+          - /docs/dns_record_delegation.md
+          - /docs/exercising_dns_failover_via_groups.md
+          - /docs/migrating_away_from_dns_groups.md
           - /docs/migrating_existing_clusters_to_use_groups.md
-          - /docs/exercising_DNS_failover_via_groups.md
-          - /docs/migrating_away_from_DNS_groups.md
+          - /docs/provider.md
+          - /README.md
         - name: developer-portal-controller
           import_url: https://github.com/kuadrant/developer-portal-controller?edit_uri=/blob/main/&branch=main
           imports:
@@ -261,8 +275,8 @@ nav:
           - 'Cluster Aware DNSRecord Delegation': kuadrant-operator/doc/user-guides/dns/understanding_dns_delegation.md
           - 'DNS Fail-over':
             - 'Migrating Existing Clusters To Use Groups': dns-operator/docs/migrating_existing_clusters_to_use_groups.md
-            - 'Exercising DNS Fail-over via Groups': dns-operator/docs/exercising_DNS_failover_via_groups.md
-            - 'Migrating Away From DNS Groups': dns-operator/docs/migrating_away_from_DNS_groups.md
+            - 'Exercising DNS Fail-over via Groups': dns-operator/docs/exercising_dns_failover_via_groups.md
+            - 'Migrating Away From DNS Groups': dns-operator/docs/migrating_away_from_dns_groups.md
       - 'mTLS Configuration': kuadrant-operator/doc/install/mtls-configuration.md
       - 'Observability':
           - 'Configure Observability': kuadrant-operator/doc/user-guides/observability/monitors.md
