@@ -266,6 +266,7 @@ nav:
           - 'Configure Observability': kuadrant-operator/doc/user-guides/observability/monitors.md
           - 'Dashboards and Alerts': kuadrant-operator/doc/observability/examples.md
           - 'Tracing': kuadrant-operator/doc/observability/tracing.md
+          - 'Envoy Access Logs': kuadrant-operator/doc/observability/envoy-access-logs.md
           - 'Monitoring Limitador': kuadrant-operator/doc/user-guides/observability/limitador-metrics.md
           - 'Monitoring AI Token Metrics': kuadrant-operator/doc/user-guides/observability/token-metrics.md
   - 'Developer Portal':
