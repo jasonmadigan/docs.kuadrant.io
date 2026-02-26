@@ -185,6 +185,11 @@ plugins:
           imports:
           - /docs/references/apiproduct.md
           - /docs/references/apikey.md
+        - name: kuadrant-console-plugin
+          import_url: https://github.com/kuadrant/kuadrant-console-plugin?edit_uri=/blob/main/&branch=main
+          imports:
+          - /docs/rbac.md
+          - /docs/overview.md
         - name: kuadrant-backstage-plugin
           import_url: https://github.com/kuadrant/kuadrant-backstage-plugin?edit_uri=/blob/main/&branch=main
           imports:
@@ -290,6 +295,9 @@ nav:
           - 'Envoy Access Logs': kuadrant-operator/doc/observability/envoy-access-logs.md
           - 'Monitoring Limitador': kuadrant-operator/doc/user-guides/observability/limitador-metrics.md
           - 'Monitoring AI Token Metrics': kuadrant-operator/doc/user-guides/observability/token-metrics.md
+  - 'Console Plugin':
+      - 'Overview': kuadrant-console-plugin/docs/overview.md
+      - 'RBAC': kuadrant-console-plugin/docs/rbac.md
   - 'Developer Portal':
       - 'Overview': kuadrant-backstage-plugin/docs/overview.md
       - 'Getting Started': kuadrant-backstage-plugin/docs/getting-started.md
