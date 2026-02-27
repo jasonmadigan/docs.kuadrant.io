@@ -2401,6 +2401,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authorization-and-tool-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization and Tool Filtering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next Steps
@@ -2780,6 +2789,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authorization-and-tool-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization and Tool Filtering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next Steps
@@ -2922,11 +2940,21 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Delete a virtual server</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>mcpvirtualserver<span class="w"> </span>dev-tools<span class="w"> </span>-n<span class="w"> </span>mcp-system
 </span></code></pre></div>
+<h2 id="authorization-and-tool-filtering">Authorization and Tool Filtering<a class="headerlink" href="#authorization-and-tool-filtering" title="Permanent link">&para;</a></h2>
+<p>Virtual MCP servers are a <code>tools/list</code> concept only. They filter which tools a client discovers, but do not affect <code>tools/call</code> routing or authorization.</p>
+<p>If you have <a href="../authentication/">authentication</a> and <a href="../user-based-tool-filter/">user-based tool filtering</a> configured, the broker applies two filters sequentially when handling a <code>tools/list</code> request with a virtual server header:</p>
+<ol>
+<li><strong>Identity-based filtering</strong> -- the <code>x-authorized-tools</code> reduces the tool list to only tools the user has <code>resource_access</code> roles for</li>
+<li><strong>Virtual server filtering</strong> -- the <code>X-Mcp-Virtualserver</code> header further reduces the list to only tools defined in the MCPVirtualServer resource</li>
+</ol>
+<p>The result is the intersection of both filters. For example, if the <code>accounting</code> virtual server lists <code>test1_greet</code> and <code>test3_add</code>, but the user only has the <code>greet</code> role on <code>mcp-test/test-server1</code>, they will only see <code>test1_greet</code>.</p>
+<p>No additional AuthPolicy configuration is needed for virtual servers beyond what is already set up for regular MCP server authorization.</p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>With virtual MCP servers configured, you can:</p>
 <ul>
 <li><strong><a href="../authentication/">Configure Authentication</a></strong> - Add user identity validation to virtual servers</li>
 <li><strong><a href="../authorization/">Configure Authorization</a></strong> - Add access control to virtual servers</li>
+<li><strong><a href="../user-based-tool-filter/">User-Based Tool Filtering</a></strong> - Identity-based tool filtering via trusted headers</li>
 <li><strong><a href="../external-mcp-server/">External MCP Servers</a></strong> - Include external tools in virtual servers</li>
 </ul>
 
