@@ -78,10 +78,10 @@ The user will provide the new version (e.g. "1.4.x") and the previous version to
    git push upstream v{VERSION}
 
    # deploy to gh-pages with the latest alias
-   mike deploy --update-aliases {VERSION} latest --push
+   mike deploy --update-aliases {VERSION} latest --push --remote upstream
 
    # set as the default version
-   mike set-default {VERSION} --push
+   mike set-default {VERSION} --push --remote upstream
 
    # switch back to main and update the default version
    git checkout main
@@ -93,10 +93,10 @@ The user will provide the new version (e.g. "1.4.x") and the previous version to
    git push upstream v{VERSION}
 
    docker run -v "$(pwd):/docs" -v "$HOME/.gitconfig:/opt/app-root/src/.gitconfig:ro" -v "$HOME/.ssh:/opt/app-root/src/.ssh:ro" \
-     quay.io/kuadrant/docs.kuadrant.io:latest "mike deploy --update-aliases {VERSION} latest --push"
+     quay.io/kuadrant/docs.kuadrant.io:latest "mike deploy --update-aliases {VERSION} latest --push --remote upstream"
 
    docker run -v "$(pwd):/docs" -v "$HOME/.gitconfig:/opt/app-root/src/.gitconfig:ro" -v "$HOME/.ssh:/opt/app-root/src/.ssh:ro" \
-     quay.io/kuadrant/docs.kuadrant.io:latest "mike set-default {VERSION} --push"
+     quay.io/kuadrant/docs.kuadrant.io:latest "mike set-default {VERSION} --push --remote upstream"
 
    git checkout main
    ```
