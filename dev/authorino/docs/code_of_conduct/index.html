@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.kuadrant.io/dev/dns-operator/docs/cli/">
+        <link rel="canonical" href="https://docs.kuadrant.io/dev/authorino/docs/code_of_conduct/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Overview - Kuadrant Documentation</title>
+        <title>Code of conduct - Kuadrant Documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#code-of-conduct" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Code of conduct
             
           </span>
         </div>
@@ -909,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authorino/docs/user-guides/observability/" class="md-nav__link">
+      <a href="../user-guides/observability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1288,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider/" class="md-nav__link">
+      <a href="../../../dns-operator/docs/provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1470,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../migrating_existing_clusters_to_use_groups/" class="md-nav__link">
+      <a href="../../../dns-operator/docs/migrating_existing_clusters_to_use_groups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1491,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercising_dns_failover_via_groups/" class="md-nav__link">
+      <a href="../../../dns-operator/docs/exercising_dns_failover_via_groups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1512,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../migrating_away_from_dns_groups/" class="md-nav__link">
+      <a href="../../../dns-operator/docs/migrating_away_from_dns_groups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2560,8 +2560,23 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-of-conduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code of Conduct
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2576,7 +2591,7 @@
                   
 
   
-    <a href="https://github.com/kuadrant/dns-operator/blob/main/docs/cli.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/kuadrant/authorino/blob/main/docs/code_of_conduct.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2584,52 +2599,11 @@
   
 
 
-<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
-<p>The <code>kuadrant-dns</code> (<code>kubect-kuadrant_dns</code> is the binary name) is a CLI that is shipped alongside the DNS-operator. </p>
-<p>It is intended to be used for advanced configuration (such as automated configuration of cluster secrets for CoreDNS), gathering of the debug information (i.e. get all records from the managed zone), and to manually adjust the managed zone (i.e. delete the owner). See <code>kubectl kuadrant-dns help</code> for a list of available functions</p>
-<p>If located in <code>PATH</code>, it will act as a kubectl plugin and will embed itself into <code>kuadrantctl</code>, but can be used as a standalone. </p>
-<h1 id="how-to-get">How to get<a class="headerlink" href="#how-to-get" title="Permanent link">&para;</a></h1>
-<p>As a note - there is a <code>make cp-cli</code> target that will move the binary from <code>dns-operator/bin</code> into <code>~/.local/bin</code>. </p>
-<h2 id="from-source">From source<a class="headerlink" href="#from-source" title="Permanent link">&para;</a></h2>
-<p>This requires <code>GO</code> configured on your machine</p>
-<ol>
-<li>Clone this repository </li>
-<li>Run <code>make build-cli</code></li>
-<li>Use the binary from the <code>dns-operator/bin</code> </li>
-</ol>
-<h2 id="from-repository">From repository<a class="headerlink" href="#from-repository" title="Permanent link">&para;</a></h2>
-<p>You can download a binary for your architecture from the <a href="https://github.com/Kuadrant/dns-operator/releases">release</a> page of the DNS-operator. A new version of the cli is built on each release after v0.14.0</p>
-<h1 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h1>
-<p>For most cases running a command with <code>--help</code> should answer your questions. Here you will find less of a technical details
-but of a more reasoning and intent behind commands. </p>
-<h2 id="dns-groups">DNS Groups<a class="headerlink" href="#dns-groups" title="Permanent link">&para;</a></h2>
-<p>The DNS Group commands will allow the manipulation of the <code>kuadrant-active-groups.&lt;domain&gt;</code> TXT record.
-This record is responsible for informing controllers which DNS Groups are currently active.
-The DNS Group commands are intended to be run with a secret that has list permissions across all zones 
-and write permissions in the relevant zones.</p>
-<h3 id="global-flags">Global Flags<a class="headerlink" href="#global-flags" title="Permanent link">&para;</a></h3>
-<p>--verbose / -v Set the log level for the cli. All logs are sent to standard error. </p>
-<ul>
-<li>level 0: default level, error logs will be exposed</li>
-<li>level 1: error, and info logs will be exposed</li>
-<li>level 2: error, info, and debug logs will be exposed</li>
-</ul>
-<h3 id="add-active-group">add-active-group<a class="headerlink" href="#add-active-group" title="Permanent link">&para;</a></h3>
-<p>Will fetch a list of zones that are an exact match of a domain (the <code>--domain</code> flag).
-You can specify <code>*.&lt;domain&gt;</code> to match all zones that end with <code>&lt;domain&gt;</code>.
-If more than one zone is found it will prompt asking which of the zones to select, 
-unless <code>-y</code> is provided in which case it will apply the change to all relevant zones..
-When adding a group to the set of active groups in the selected zone the command will first ensure the group is not already present.
-If the group is not present, it will either update the existing <code>kuadrant-active-groups.&lt;domain&gt;</code> TXT record, or create it. </p>
-<h3 id="get-active-group">get-active-group<a class="headerlink" href="#get-active-group" title="Permanent link">&para;</a></h3>
-<p>Will fetch a list of active groups from the <code>kuadrant-active-groups.&lt;domain&gt;</code> TXT record and display them. 
-Active groups will be listed under the corresponding zone.</p>
-<h3 id="remove-active-group">remove-active-group<a class="headerlink" href="#remove-active-group" title="Permanent link">&para;</a></h3>
-<p>Will fetch a list of zones that are an exact match of a domain (the <code>--domain</code> flag).
-You can specify <code>*.&lt;domain&gt;</code> to match all zones that end with <code>&lt;domain&gt;</code>.
-For each zone that has a group in the <code>kuadrant-active-groups.&lt;domain&gt;</code> TXT record it will display all endpoints that 
-are associated with the group. Then it will prompt with a confirmation of a deletion unless <code>-y</code>/<code>--assumeyes</code> flag was provided; 
-in that case it will proceed.</p>
+  <h1>Code of conduct</h1>
+
+<h2 id="code-of-conduct">Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permanent link">&para;</a></h2>
+<p>Autorino follows the <a href="https://github.com/Kuadrant/governance/blob/main/CODE_OF_CONDUCT.md"><strong>Kuadrant Community Code of Conduct</strong></a>, which is based on the <a href="https://github.com/cncf/foundation/blob/main/code-of-conduct.md">CNCF Code of Conduct</a>.</p>
+<p>Please refer to <a href="https://github.com/Kuadrant/governance/blob/main/CODE_OF_CONDUCT.md">this</a> page for a description of the standards and values we stand for in our relationship with the community.</p>
 
 
 
